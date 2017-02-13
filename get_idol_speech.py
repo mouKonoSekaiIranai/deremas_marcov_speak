@@ -45,6 +45,8 @@ class Idol_speech(object):
         print('Success get to ',idol_name,'\'s speechs.')
         print('file name is ',file_name,'.')
         f.close
+
+    def 
         
 if __name__=='__main__':
     idol_speech=Idol_speech('赤城みりあ')

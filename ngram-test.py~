@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+import MeCab
+import sys
+
+file_name=sys.argv[1]p
+fp=open(file_name,'r')
+text=fp.read()
+fp.close()
+
+mt=MeCab.Tagger()
+mt.parse('')
+
+word_dict={}
+lines=text.split('\n')
+for line in lines:
+    malist=mt.ParseToNode(line)
+    for w in malist:
+        word=w.surface
+        ps=w.feature.split(',')[0]
+        print(word)
+        print(os)

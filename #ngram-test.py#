@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+import MeCab
+import sys
+
+file_name=sys.argv[1]
+fp=open(file_name,'r')
+text=fp.read()
+fp.close()
+
+mt=MeCab.Tagger()
+mt.parse('')
+
+word_dict={}
+lines=text.split('\n')
+for line in lines:
+    node=mt.parseToNode(line)
+    while node:
+        surface=node.surface
+        meta=node.feature.split(',')[0]
+        if meta[0]==('名詞'):
+            word_dict[surface]=
